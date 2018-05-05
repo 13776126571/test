@@ -1,26 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="03b7ae3d-d7dc-4551-be19-ea62c20a9680" name="Default" comment="test">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/layouts/first.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gupao/vip/xiang/demo/action/TestAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gupao/vip/xiang/demo/action/TestAction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gupao/vip/xiang/demo/service/DemoServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gupao/vip/xiang/demo/service/DemoServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gupao/vip/xiang/demo/service/TestServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gupao/vip/xiang/demo/service/TestServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gupao/vip/xiang/spring/framework/context/GPApplicationContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gupao/vip/xiang/spring/framework/context/GPApplicationContext.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gupao/vip/xiang/spring/framework/webmvc/DispatcherServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gupao/vip/xiang/spring/framework/webmvc/DispatcherServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gupao/vip/xiang/spring/framework/webmvc/GPHandlerAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gupao/vip/xiang/spring/framework/webmvc/GPHandlerAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gupao/vip/xiang/spring/framework/webmvc/GPViewResolver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gupao/vip/xiang/spring/framework/webmvc/GPViewResolver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/gupao/vip/xiang/demo/action/TestAction.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/gupao/vip/xiang/demo/action/TestAction.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/gupao/vip/xiang/spring/framework/context/GPApplicationContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/gupao/vip/xiang/spring/framework/context/GPApplicationContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/gupao/vip/xiang/spring/framework/webmvc/DispatcherServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/gupao/vip/xiang/spring/framework/webmvc/DispatcherServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/gupao/vip/xiang/spring/framework/webmvc/GPHandlerAdapter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/gupao/vip/xiang/spring/framework/webmvc/GPHandlerAdapter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/gupao/vip/xiang/spring/framework/webmvc/GPViewResolver.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/gupao/vip/xiang/spring/framework/webmvc/GPViewResolver.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-    </list>
+    <list default="true" id="03b7ae3d-d7dc-4551-be19-ea62c20a9680" name="Default" comment="test" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -45,7 +26,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="GPApplicationContext.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="GPApplicationContext.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/gupao/vip/xiang/spring/framework/context/GPApplicationContext.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="119">
@@ -61,11 +42,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DispatcherServlet.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="DispatcherServlet.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/gupao/vip/xiang/spring/framework/webmvc/DispatcherServlet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="71">
-              <caret line="195" selection-start-line="195" selection-end-line="195" />
+            <state relative-caret-position="537">
+              <caret line="181" column="51" lean-forward="true" selection-start-line="181" selection-start-column="51" selection-end-line="181" selection-end-column="51" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1000#1018#0" expanded="true" />
@@ -192,7 +173,7 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="495" />
     <option name="y" value="66" />
     <option name="width" value="1194" />
@@ -267,6 +248,68 @@
               <item name="xiang" type="462c0819:PsiDirectoryNode" />
               <item name="demo" type="462c0819:PsiDirectoryNode" />
               <item name="service" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="spring-2.0" type="b2602c69:ProjectViewProjectNode" />
+              <item name="spring-2.0" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="xiang" type="462c0819:PsiDirectoryNode" />
+              <item name="spring" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="spring-2.0" type="b2602c69:ProjectViewProjectNode" />
+              <item name="spring-2.0" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="xiang" type="462c0819:PsiDirectoryNode" />
+              <item name="spring" type="462c0819:PsiDirectoryNode" />
+              <item name="framework" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="spring-2.0" type="b2602c69:ProjectViewProjectNode" />
+              <item name="spring-2.0" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="xiang" type="462c0819:PsiDirectoryNode" />
+              <item name="spring" type="462c0819:PsiDirectoryNode" />
+              <item name="framework" type="462c0819:PsiDirectoryNode" />
+              <item name="context" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="spring-2.0" type="b2602c69:ProjectViewProjectNode" />
+              <item name="spring-2.0" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="xiang" type="462c0819:PsiDirectoryNode" />
+              <item name="spring" type="462c0819:PsiDirectoryNode" />
+              <item name="framework" type="462c0819:PsiDirectoryNode" />
+              <item name="core" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="spring-2.0" type="b2602c69:ProjectViewProjectNode" />
+              <item name="spring-2.0" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="xiang" type="462c0819:PsiDirectoryNode" />
+              <item name="spring" type="462c0819:PsiDirectoryNode" />
+              <item name="framework" type="462c0819:PsiDirectoryNode" />
+              <item name="webmvc" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="spring-2.0" type="b2602c69:ProjectViewProjectNode" />
+              <item name="spring-2.0" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="xiang" type="462c0819:PsiDirectoryNode" />
+              <item name="spring" type="462c0819:PsiDirectoryNode" />
+              <item name="servlet" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="spring-2.0" type="b2602c69:ProjectViewProjectNode" />
@@ -443,12 +486,12 @@
       <workItem from="1525265541035" duration="1740000" />
       <workItem from="1525352186392" duration="640000" />
       <workItem from="1525436872085" duration="11700000" />
-      <workItem from="1525489060070" duration="13858000" />
+      <workItem from="1525489060070" duration="14491000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="61382000" />
+    <option name="totallyTimeSpent" value="62015000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -467,7 +510,7 @@
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.27144772" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27144772" />
       <window_info id="Web" order="2" side_tool="true" />
       <window_info anchor="right" id="Database" order="3" weight="0.3297587" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -475,7 +518,7 @@
       <window_info id="UI Designer" order="2" />
       <window_info anchor="right" id="Theme Preview" order="3" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.3988183" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3988183" />
       <window_info anchor="bottom" id="Messages" order="7" weight="0.32791728" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -912,6 +955,19 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gupao/vip/xiang/spring/framework/webmvc/DispatcherServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="537">
+          <caret line="181" column="51" lean-forward="true" selection-start-line="181" selection-start-column="51" selection-end-line="181" selection-end-column="51" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1000#1018#0" expanded="true" />
+            <element signature="e#1134#1169#0" expanded="true" />
+            <element signature="e#1245#1261#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/gupao/vip/xiang/spring/framework/context/GPApplicationContext.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -922,19 +978,6 @@
             <element signature="e#6429#6430#0" expanded="true" />
             <element signature="e#6465#6466#0" expanded="true" />
             <element signature="e#6511#6512#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gupao/vip/xiang/spring/framework/webmvc/DispatcherServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="71">
-          <caret line="195" selection-start-line="195" selection-end-line="195" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1000#1018#0" expanded="true" />
-            <element signature="e#1134#1169#0" expanded="true" />
-            <element signature="e#1245#1261#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -958,7 +1001,7 @@
       </state>
       <state key="FacetStructureConfigurable.UI">
         <settings>
-          <last-edited />
+          <last-edited>Web (spring-2.0)|Web</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -1005,7 +1048,7 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
-          <last-edited />
+          <last-edited>Maven: org.hamcrest:hamcrest-core:1.3</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
