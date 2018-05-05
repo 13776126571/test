@@ -5,7 +5,7 @@ import com.gupao.vip.xiang.spring.framework.annotation.Service;
 /**
  * xiang 2018/4/22
  **/
-@Service("demoServiceImpl")
+@Service()
 public class DemoServiceImpl implements  IDemoService {
     @Override
     public String get(String name) {

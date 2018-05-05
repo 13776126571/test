@@ -7,7 +7,7 @@ import com.gupao.vip.xiang.spring.framework.annotation.Service;
 /**
  * xiang 2018/4/21
  **/
-@Service("testService")
+@Service()
 public class TestServiceImpl implements  ITestService{
 
     @Autowired

@@ -11,6 +11,7 @@ import com.gupao.vip.xiang.spring.framework.core.GPBeanFactory;
 import java.lang.reflect.Field;
 import java.util.List;
 import java.util.Map;
+import java.util.Properties;
 import java.util.concurrent.ConcurrentHashMap;
 
 /**
@@ -66,7 +67,7 @@ public class GPApplicationContext implements GPBeanFactory {
     public void populateBean(String beanName,Object instance){
          Class<?> clazz=instance.getClass();
          // 被Controller  Service 标记的类
-         if (!clazz.isAnnotationPresent(Controller.class) || clazz.isAnnotationPresent(Service.class)){
+         if (!(clazz.isAnnotationPresent(Controller.class) || clazz.isAnnotationPresent(Service.class))){
              return ;
          }
          Field[] fields=clazz.getDeclaredFields();
@@ -76,14 +77,14 @@ public class GPApplicationContext implements GPBeanFactory {
                 continue;
             }
             Autowired autowired=field.getAnnotation(Autowired.class);
-            String autowiredBeanName=autowired.value();
+            String autowiredBeanName=autowired.value().trim();
             if ("".equals(autowiredBeanName)){
                 autowiredBeanName=field.getType().getName();
             }
 
             field.setAccessible(true);
              try {
-                 field.set(instance,beanWrapperMap.get(autowiredBeanName).getWrappedInstance());
+                 field.set(instance,this.beanWrapperMap.get(autowiredBeanName).getWrappedInstance());
              } catch (IllegalAccessException e) {
                  e.printStackTrace();
              }
@@ -107,18 +108,16 @@ public class GPApplicationContext implements GPBeanFactory {
 
                 //如果是一个接口，   是不能实例化的
                 //用他的实现类
-                if (beanClass.isInterface()){
-                    continue;
-                }
+                if (beanClass.isInterface()){  continue;}
                 BeanDefinition beanDefinition=reader.registerBean(className);
                 if (null!=beanDefinition){
                     //放到容器中
-                    beanDefinitionMap.put(beanDefinition.getBeanClassName(),beanDefinition);
+                    this.beanDefinitionMap.put(beanDefinition.getFactoryBeanName(),beanDefinition);
                 }
 
                 Class<?>[] classes=beanClass.getInterfaces();
                 for (Class clazz:classes){
-                    beanDefinitionMap.put(clazz.getName(),beanDefinition);
+                    this.beanDefinitionMap.put(clazz.getName(),beanDefinition);
                 }
                 //至此，容器初始化完毕
             } catch (ClassNotFoundException e) {
@@ -160,23 +159,33 @@ public class GPApplicationContext implements GPBeanFactory {
         Object instance=null;
         String className=beanDefinition.getBeanClassName();
         //如果className存在  直接取
-       if (beanCacheMap.containsKey(className)){
-           instance=beanCacheMap.get(className);
-       }else{
-           try{
-               //否则 new一个
-               Class<?>clazz=Class.forName(className);
-               instance=clazz.newInstance();
-               beanCacheMap.put(className,instance);
-           }catch(Exception e){
-               e.printStackTrace();
-           }
-         return instance;
-       }
+        try {
+            if (beanCacheMap.containsKey(className)) {
+                instance = beanCacheMap.get(className);
+            } else {
+                //否则 new一个
+                Class<?> clazz = Class.forName(className);
+                instance = clazz.newInstance();
+                beanCacheMap.put(className, instance);
+            }
+            return instance;
+        }catch (Exception e){
+            e.printStackTrace();
+        }
         return  null;
     }
 
 
 
+    public String[] getBeanDefinitionNames(){
+        return  this.beanDefinitionMap.keySet().toArray(new String[this.beanDefinitionMap.size()]);
+    }
 
+    public int getBeanDefinitionCount(){
+        return  this.beanDefinitionMap.size();
+    }
+
+    public Properties getConfig(){
+        return this.reader.getConfit();
+    }
 }

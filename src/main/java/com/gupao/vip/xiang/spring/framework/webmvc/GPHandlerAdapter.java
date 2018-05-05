@@ -2,6 +2,7 @@ package com.gupao.vip.xiang.spring.framework.webmvc;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.util.Map;
 
 /**
  * xiang 2018/4/24
@@ -16,6 +17,11 @@ public class GPHandlerAdapter {
      *                  因为handle中包含了 controller ,method,url信息
      * @return
      */
+    private  Map<String,Integer> paramMapping;
+
+    public GPHandlerAdapter(Map<String,Integer> paramMapping){
+        this.paramMapping=paramMapping;
+    }
     public GPModelAndView handler(HttpServletRequest req, HttpServletResponse resp, GPHandlerAdapter handle) {
         //根据用户请求的参数信息， 跟method中的参数信息 要进行动态匹配
 
