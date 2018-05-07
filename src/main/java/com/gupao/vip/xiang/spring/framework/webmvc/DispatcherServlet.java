@@ -2,6 +2,7 @@ package com.gupao.vip.xiang.spring.framework.webmvc;
 
 import com.gupao.vip.xiang.spring.framework.annotation.Controller;
 import com.gupao.vip.xiang.spring.framework.annotation.RequestMapping;
+import com.gupao.vip.xiang.spring.framework.annotation.RequestParam;
 import com.gupao.vip.xiang.spring.framework.context.GPApplicationContext;
 
 import javax.servlet.ServletConfig;
@@ -13,6 +14,7 @@ import java.io.File;
 import java.io.IOException;
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Method;
+import java.lang.reflect.Parameter;
 import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -48,9 +50,9 @@ public class DispatcherServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        String url=req.getRequestURI();
-        String contextPath=req.getContextPath();
-        url=url.replace(contextPath,"").replaceAll("/+","/");
+//        String url=req.getRequestURI();
+//        String contextPath=req.getContextPath();
+//        url=url.replace(contextPath,"").replaceAll("/+","/");
 
         doPost(req,resp);
     }
@@ -77,26 +79,42 @@ public class DispatcherServlet extends HttpServlet {
             }
             GPHandlerAdapter ha = getHandlerAdapter(handler);
 
-            GPModelAndView mv = ha.handler(req, resp, ha);
+            //调用方法，得到返回值ModelAndView
+            GPModelAndView mv = ha.handler(req, resp, handler);
 
             processDispathcResult(resp, mv);
 
     }
 
-    private void processDispathcResult(HttpServletResponse resp, GPModelAndView mv) {
+    private void processDispathcResult(HttpServletResponse resp, GPModelAndView mv) throws Exception {
         //调用 ViewResolver的 resolveView() 方法
+        if(null==mv){return;}
+        if (this.viewResolvers.isEmpty()){return; }
+        for (GPViewResolver viewResolver:viewResolvers){
+
+            if (!mv.getViewName().equals(viewResolver.getViewName())){
+                continue;
+            }
+            String out=viewResolver.viewResolve(mv);
+            if (out !=null){
+                resp.getWriter().write(out);
+                break;
+            }
+        }
     }
 
     private GPHandlerAdapter getHandlerAdapter(GPHandlerMapping handler) {
-        return null;
+        if (this.handlerAdapters.isEmpty()){return  null;}
+        return this.handlerAdapters.get(handler);
     }
 
     private GPHandlerMapping getHandler(HttpServletRequest req) {
 
         if (this.handlerMappings.isEmpty()){return  null;}
-        String url=req.getRequestURI();
-        String contextPath=req.getContextPath();
-        url=url.replace(contextPath,"").replaceAll("/+",".");
+        String url = req.getRequestURI();
+        String contextPath = req.getContextPath();
+        url = url.replace(contextPath,"").replaceAll("/+","/");
+
         //去handlerMapping中匹配输入的url
         for (GPHandlerMapping handler:handlerMappings){
             Matcher matcher=handler.getPattern().matcher(url);
@@ -143,10 +161,12 @@ public class DispatcherServlet extends HttpServlet {
             Map<String,Integer> paramMapping=new HashMap<String,Integer>();
             //每个参数可以加多个注解
             Annotation [][] pa=handlerMapping.getMethod().getParameterAnnotations();
+
+
             for (int i=0;i<pa.length;i++){
                 for (Annotation a:pa[i]){
-                    if (a instanceof RequestMapping){
-                        String paramName=((RequestMapping) a).value();
+                    if (a instanceof RequestParam){
+                        String paramName=((RequestParam) a).value();
                         //把形参的名字和位置放到map中
                         if (!"".equals(paramName.trim())){
                             paramMapping.put(paramName,i);
@@ -155,6 +175,13 @@ public class DispatcherServlet extends HttpServlet {
                 }
             }
 
+            // 获取方法的参数名
+            Parameter[] parameter=handlerMapping.getMethod().getParameters();
+
+            for (int i=0;i<parameter.length;i++){
+                System.out.println("========"+parameter[i].getName());
+
+            }
             //处理非命名参数
             //只处理request 和response
             Class<?>[] paramTypes=handlerMapping.getMethod().getParameterTypes();
@@ -176,10 +203,12 @@ public class DispatcherServlet extends HttpServlet {
         //通常 是一个Map<String,Method>   map.put(url,Method);
         //但是 GPHandlerAdapter有个Pattern属性 已经包含了url信息， 所以直接用list<GPHandlerAdapter>
 
+
         String[]beanNames= applicationContext.getBeanDefinitionNames();
         for (String beanName:beanNames){
             //从容器中取到所有的实例
             System.out.println("============================"+beanName+"=============================");
+            //获取到的是被包装过的对象，不是原始的对象a
             Object controller=applicationContext.getBean(beanName);
             Class<?>clazz=controller.getClass();
             //只要带Controller注解的
@@ -196,8 +225,8 @@ public class DispatcherServlet extends HttpServlet {
             for (Method method:methods){
                 //只扫描带有RequestMapping的方法
                 if (!method.isAnnotationPresent(RequestMapping.class)){continue;}
-                RequestMapping requestMapping=clazz.getAnnotation(RequestMapping.class);
-                String regex=("/"+baseUrl+requestMapping.value().replaceAll("/+","/"));
+                RequestMapping requestMapping=method.getAnnotation(RequestMapping.class);
+                String regex=(baseUrl+requestMapping.value().replaceAll("/+","/"));
                 Pattern pattern=Pattern.compile(regex);
                 this.handlerMappings.add(new GPHandlerMapping(pattern,controller,method));
                 System.out.println("Mapping"+regex+","+method);

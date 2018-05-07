@@ -168,6 +168,7 @@ public class GPApplicationContext implements GPBeanFactory {
                 instance = clazz.newInstance();
                 beanCacheMap.put(className, instance);
             }
+            //这里刚开始写错了  return null;  调了起码3个小时才找到问题
             return instance;
         }catch (Exception e){
             e.printStackTrace();

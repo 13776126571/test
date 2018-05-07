@@ -4,8 +4,10 @@ import com.gupao.vip.xiang.demo.service.ITestService;
 import com.gupao.vip.xiang.spring.framework.annotation.Autowired;
 import com.gupao.vip.xiang.spring.framework.annotation.Controller;
 import com.gupao.vip.xiang.spring.framework.annotation.RequestMapping;
+import com.gupao.vip.xiang.spring.framework.annotation.RequestParam;
 import com.gupao.vip.xiang.spring.framework.webmvc.GPModelAndView;
-
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -19,7 +21,8 @@ public class TestAction {
     @Autowired
     private ITestService testService;
     @RequestMapping("/query")
-    public GPModelAndView query(String  name){
+    public GPModelAndView query(HttpServletRequest req, HttpServletResponse resq, @RequestParam("name") String  name){
+
 
         String result=testService.query(name);
         Map<String,Object> model=new HashMap<String,Object>();
