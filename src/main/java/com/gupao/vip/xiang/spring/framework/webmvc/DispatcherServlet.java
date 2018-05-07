@@ -175,12 +175,20 @@ public class DispatcherServlet extends HttpServlet {
                 }
             }
 
+
             // 获取方法的参数名
             Parameter[] parameter=handlerMapping.getMethod().getParameters();
-
             for (int i=0;i<parameter.length;i++){
                 System.out.println("========"+parameter[i].getName());
 
+            }
+
+           String beanName= lowerFirstCase(handlerMapping.getController().getClass().getSimpleName());
+            Object controller=applicationContext.getBean(beanName);
+            Class<?>clazz=controller.getClass();
+            Method[] methods=clazz.getMethods();
+            for (Method m:methods){
+                System.out.println(m.getParameters());
             }
             //处理非命名参数
             //只处理request 和response
@@ -234,5 +242,13 @@ public class DispatcherServlet extends HttpServlet {
             }
 
         }
+    }
+
+
+    //字符串首字母小写
+    private String lowerFirstCase(String str){
+        char [] chars = str.toCharArray();
+        chars[0] += 32;
+        return String.valueOf(chars);
     }
 }
