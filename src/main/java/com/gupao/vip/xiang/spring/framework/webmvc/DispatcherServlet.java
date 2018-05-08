@@ -176,20 +176,14 @@ public class DispatcherServlet extends HttpServlet {
             }
 
 
-            // 获取方法的参数名
+            // 获取方法的参数名  这里处理非命名参数 且不是request和response
             Parameter[] parameter=handlerMapping.getMethod().getParameters();
             for (int i=0;i<parameter.length;i++){
-                System.out.println("========"+parameter[i].getName());
-
+                if (parameter[i].getParameterizedType()==HttpServletRequest.class || parameter[i].getParameterizedType()==HttpServletResponse.class){continue;}
+                System.out.println(parameter[i].getName()+"-----"+i);
+                paramMapping.put(parameter[i].getName(),i);
             }
 
-           String beanName= lowerFirstCase(handlerMapping.getController().getClass().getSimpleName());
-            Object controller=applicationContext.getBean(beanName);
-            Class<?>clazz=controller.getClass();
-            Method[] methods=clazz.getMethods();
-            for (Method m:methods){
-                System.out.println(m.getParameters());
-            }
             //处理非命名参数
             //只处理request 和response
             Class<?>[] paramTypes=handlerMapping.getMethod().getParameterTypes();

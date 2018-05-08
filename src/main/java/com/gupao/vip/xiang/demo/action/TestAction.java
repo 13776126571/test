@@ -8,7 +8,9 @@ import com.gupao.vip.xiang.spring.framework.annotation.RequestParam;
 import com.gupao.vip.xiang.spring.framework.webmvc.GPModelAndView;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -21,14 +23,16 @@ public class TestAction {
     @Autowired
     private ITestService testService;
     @RequestMapping("/query")
-    public GPModelAndView query(HttpServletRequest req, HttpServletResponse resq, @RequestParam("name") String  name){
+    public GPModelAndView query(HttpServletRequest req, HttpServletResponse resq, @RequestParam("name") String  name,String address){
 
 
         String result=testService.query(name);
         Map<String,Object> model=new HashMap<String,Object>();
         model.put("name",name);
+        model.put("address",address);
         model.put("data",result);
         return  new GPModelAndView("first.html",model);
     }
+
 
 }
