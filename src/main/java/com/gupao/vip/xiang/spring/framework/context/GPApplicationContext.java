@@ -58,10 +58,10 @@ public class GPApplicationContext implements GPBeanFactory {
         }
 
         //暂时先在这里全部注入
-        for (Map.Entry<String,BeanWrapper> beanWrapperEntry:this.beanWrapperMap.entrySet()){
+       /* for (Map.Entry<String,BeanWrapper> beanWrapperEntry:this.beanWrapperMap.entrySet()){
             String beanName=beanWrapperEntry.getKey();
             populateBean(beanName,beanWrapperEntry.getValue().getWrappedInstance());
-        }
+        }*/
     }
 
     public void populateBean(String beanName,Object instance){
@@ -82,9 +82,17 @@ public class GPApplicationContext implements GPBeanFactory {
                 autowiredBeanName=field.getType().getName();
             }
 
+             BeanWrapper bw = this.beanWrapperMap.get(autowiredBeanName);
+            Object obj;
+            //先判断  被Autowired标记的字段有没有实例化，如果没有  先调用getBean方法
+            if(bw==null){
+                obj=getBean(autowiredBeanName);
+            }else{
+                 obj=bw.getWrappedInstance();
+            }
             field.setAccessible(true);
              try {
-                 field.set(instance,this.beanWrapperMap.get(autowiredBeanName).getWrappedInstance());
+                 field.set(instance,obj);
              } catch (IllegalAccessException e) {
                  e.printStackTrace();
              }
@@ -149,8 +157,8 @@ public class GPApplicationContext implements GPBeanFactory {
         this.beanWrapperMap.put(beanName,beanWrapper);
         //初始化以后调用一次
         beanPostProcessor.postProcessorAfterInitialization(instance,beanName);
-        //不能在这调用， 依赖还没实例化
-       // populateBean(beanName,instance);
+
+        populateBean(beanName,instance);
         return this.beanWrapperMap.get(beanName).getWrappedInstance();
     }
 

@@ -2,15 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="03b7ae3d-d7dc-4551-be19-ea62c20a9680" name="Default" comment="test">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gupao/vip/xiang/demo/action/TestAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gupao/vip/xiang/demo/action/TestAction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gupao/vip/xiang/spring/framework/webmvc/DispatcherServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gupao/vip/xiang/spring/framework/webmvc/DispatcherServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/layouts/first.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/layouts/first.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/gupao/vip/xiang/demo/action/TestAction.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/gupao/vip/xiang/demo/action/TestAction.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/gupao/vip/xiang/spring/framework/webmvc/DispatcherServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/gupao/vip/xiang/spring/framework/webmvc/DispatcherServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/layouts/first.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/layouts/first.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gupao/vip/xiang/spring/framework/context/GPApplicationContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gupao/vip/xiang/spring/framework/context/GPApplicationContext.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gupao/vip/xiang/spring/framework/context/GPApplicationContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/gupao/vip/xiang/spring/framework/context/GPApplicationContext.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -36,11 +30,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="GPApplicationContext.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="GPApplicationContext.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/gupao/vip/xiang/spring/framework/context/GPApplicationContext.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2432">
-              <caret line="140" selection-start-line="140" selection-end-line="140" />
+            <state relative-caret-position="135">
+              <caret line="79" column="62" lean-forward="true" selection-start-line="79" selection-start-column="62" selection-end-line="79" selection-end-column="62" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -51,8 +45,8 @@
       <file leaf-file-name="DispatcherServlet.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/gupao/vip/xiang/spring/framework/webmvc/DispatcherServlet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="119" column="42" lean-forward="true" selection-start-line="119" selection-start-column="42" selection-end-line="119" selection-end-column="42" />
+            <state relative-caret-position="-2107">
+              <caret line="22" column="18" lean-forward="true" selection-start-line="22" selection-start-column="18" selection-end-line="22" selection-end-column="18" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -60,11 +54,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GPViewResolver.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="GPViewResolver.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/gupao/vip/xiang/spring/framework/webmvc/GPViewResolver.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="456">
-              <caret line="74" column="41" lean-forward="true" selection-start-line="74" selection-start-column="41" selection-end-line="74" selection-end-column="41" />
+            <state relative-caret-position="190">
+              <caret line="45" column="73" lean-forward="true" selection-start-line="45" selection-start-column="73" selection-end-line="45" selection-end-column="73" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -116,7 +110,6 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>registerBean</find>
-      <find>populateBean</find>
       <find>getBean</find>
       <find>doRegisty</find>
       <find>contextConfigLocation</find>
@@ -124,6 +117,7 @@
       <find>handlerMappings</find>
       <find>GPHandlerAdapter</find>
       <find>viewResolve</find>
+      <find>populateBean</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -157,13 +151,13 @@
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/gupao/vip/xiang/demo/service/DemoServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/gupao/vip/xiang/demo/service/TestServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/gupao/vip/xiang/spring/framework/context/GPApplicationContext.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/gupao/vip/xiang/spring/framework/webmvc/GPModelAndView.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/gupao/vip/xiang/spring/framework/webmvc/GPViewResolver.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/gupao/vip/xiang/spring/framework/webmvc/GPHandlerAdapter.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/gupao/vip/xiang/demo/action/TestAction.java" />
         <option value="$PROJECT_DIR$/src/main/resources/layouts/first.html" />
         <option value="$PROJECT_DIR$/src/main/java/com/gupao/vip/xiang/spring/framework/webmvc/DispatcherServlet.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gupao/vip/xiang/spring/framework/context/GPApplicationContext.java" />
       </list>
     </option>
   </component>
@@ -526,16 +520,15 @@
       <workItem from="1525587154748" duration="19440000" />
       <workItem from="1525693308534" duration="11000" />
       <workItem from="1525693336378" duration="7279000" />
-      <workItem from="1525784399018" duration="3511000" />
+      <workItem from="1525784399018" duration="5436000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="96105000" />
+    <option name="totallyTimeSpent" value="98030000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -594,23 +587,11 @@
           <properties />
           <option name="timeStamp" value="73" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/gupao/vip/xiang/spring/framework/webmvc/GPViewResolver.java</url>
-          <line>43</line>
-          <properties />
-          <option name="timeStamp" value="74" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/gupao/vip/xiang/spring/framework/webmvc/DispatcherServlet.java</url>
-          <line>118</line>
-          <properties />
-          <option name="timeStamp" value="75" />
-        </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="76" />
+      <option name="time" value="77" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="MavenRunConfiguration">
@@ -812,20 +793,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gupao/vip/xiang/spring/framework/core/GPFactoryBean.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="5" column="26" selection-start-line="5" selection-start-column="26" selection-end-line="5" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gupao/vip/xiang/spring/framework/core/GPBeanFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="6" column="32" selection-start-line="6" selection-start-column="32" selection-end-line="6" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/javax/servlet/servlet-api/2.4/servlet-api-2.4.jar!/javax/servlet/ServletConfig.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="114">
@@ -952,16 +919,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gupao/vip/xiang/spring/framework/context/GPApplicationContext.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2432">
-          <caret line="140" selection-start-line="140" selection-end-line="140" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/layouts/first.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="171">
@@ -987,16 +944,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gupao/vip/xiang/spring/framework/webmvc/DispatcherServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="119" column="42" lean-forward="true" selection-start-line="119" selection-start-column="42" selection-end-line="119" selection-end-column="42" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/gupao/vip/xiang/spring/framework/webmvc/GPHandlerMapping.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="399">
@@ -1010,8 +957,42 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/gupao/vip/xiang/spring/framework/webmvc/GPViewResolver.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="456">
-          <caret line="74" column="41" lean-forward="true" selection-start-line="74" selection-start-column="41" selection-end-line="74" selection-end-column="41" />
+        <state relative-caret-position="190">
+          <caret line="45" column="73" lean-forward="true" selection-start-line="45" selection-start-column="73" selection-end-line="45" selection-end-column="73" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gupao/vip/xiang/spring/framework/core/GPFactoryBean.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="5" column="26" selection-start-line="5" selection-start-column="26" selection-end-line="5" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gupao/vip/xiang/spring/framework/core/GPBeanFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="6" column="32" selection-start-line="6" selection-start-column="32" selection-end-line="6" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gupao/vip/xiang/spring/framework/webmvc/DispatcherServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2107">
+          <caret line="22" column="18" lean-forward="true" selection-start-line="22" selection-start-column="18" selection-end-line="22" selection-end-column="18" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gupao/vip/xiang/spring/framework/context/GPApplicationContext.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="79" column="62" lean-forward="true" selection-start-line="79" selection-start-column="62" selection-end-line="79" selection-end-column="62" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1037,7 +1018,7 @@
       </state>
       <state key="FacetStructureConfigurable.UI">
         <settings>
-          <last-edited />
+          <last-edited>Web (spring-2.0)|Web</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -1084,7 +1065,7 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
-          <last-edited />
+          <last-edited>Maven: org.hamcrest:hamcrest-core:1.3</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
