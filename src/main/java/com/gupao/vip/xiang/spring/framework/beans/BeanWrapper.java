@@ -1,5 +1,7 @@
 package com.gupao.vip.xiang.spring.framework.beans;
 
+import com.gupao.vip.xiang.spring.framework.aop.GPAopConfig;
+import com.gupao.vip.xiang.spring.framework.aop.GPAopProxy;
 import com.gupao.vip.xiang.spring.framework.core.GPFactoryBean;
 
 /**
@@ -8,8 +10,10 @@ import com.gupao.vip.xiang.spring.framework.core.GPFactoryBean;
  **/
 public class BeanWrapper extends GPFactoryBean {
 
-    //还会用到关擦者模式  自持事件响应
-    private BeanPostProcessor beanPostProcessor;
+    private GPAopProxy aopProxy=new GPAopProxy();
+
+    //还会用到观察者模式  自持事件响应
+    private GPBeanPostProcessor GPBeanPostProcessor;
 
 
 
@@ -18,7 +22,9 @@ public class BeanWrapper extends GPFactoryBean {
     //原始对象
     private Object orginalInstance;
     public BeanWrapper(Object instance){
-      this.wrapperInstance=instance;
+        //代理对象
+      this.wrapperInstance=aopProxy.getProxy(instance);
+      //原生对象
       this.orginalInstance=instance;
     }
 
@@ -31,11 +37,15 @@ public class BeanWrapper extends GPFactoryBean {
         return wrapperInstance.getClass();
     }
 
-    public BeanPostProcessor getBeanPostProcessor() {
-        return beanPostProcessor;
+    public GPBeanPostProcessor getBeanPostProcessor() {
+        return GPBeanPostProcessor;
     }
 
-    public void setBeanPostProcessor(BeanPostProcessor beanPostProcessor) {
-        this.beanPostProcessor = beanPostProcessor;
+    public void setBeanPostProcessor(GPBeanPostProcessor GPBeanPostProcessor) {
+        this.GPBeanPostProcessor = GPBeanPostProcessor;
+    }
+
+    public void setAopConfig(GPAopConfig aopConfig){
+        aopProxy.setConfig(aopConfig);
     }
 }

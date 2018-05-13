@@ -1,6 +1,6 @@
 package com.gupao.vip.xiang.spring.framework.context.support;
 
-import com.gupao.vip.xiang.spring.framework.beans.BeanDefinition;
+import com.gupao.vip.xiang.spring.framework.beans.GPBeanDefinition;
 
 import java.io.File;
 import java.io.IOException;
@@ -14,11 +14,11 @@ import java.util.Properties;
  * xiang 2018/4/23
  * 对配置文件进行定位，读取，解析
  **/
-public class BeanDefinitionReader {
+public class GPBeanDefinitionReader {
 
     private  Properties config=new Properties();
     private List<String> beanClasses=new ArrayList<String>();
-    public  BeanDefinitionReader(String... locations){
+    public GPBeanDefinitionReader(String... locations){
         //加载配置文件
         InputStream is=this.getClass().getClassLoader().getResourceAsStream(locations[0].replace("classpath:",""));
         try {
@@ -44,17 +44,17 @@ public class BeanDefinitionReader {
         return  this.beanClasses;
     }
     //每注册一个className, 就返回一个BeanDefinition
-    public BeanDefinition registerBean(String className)  {
+    public GPBeanDefinition registerBean(String className)  {
         if (beanClasses.contains(className)){
-            BeanDefinition beanDefinition=new BeanDefinition();
-            beanDefinition.setBeanClassName(className);
-            beanDefinition.setFactoryBeanName(lowerFirstCase(className.substring(className.lastIndexOf(".") + 1)));
-            return beanDefinition;
+            GPBeanDefinition GPBeanDefinition =new GPBeanDefinition();
+            GPBeanDefinition.setBeanClassName(className);
+            GPBeanDefinition.setFactoryBeanName(lowerFirstCase(className.substring(className.lastIndexOf(".") + 1)));
+            return GPBeanDefinition;
         }
          return  null;
     }
 
-    public Properties getConfit(){
+    public Properties getConfig(){
         return this.config;
     }
 

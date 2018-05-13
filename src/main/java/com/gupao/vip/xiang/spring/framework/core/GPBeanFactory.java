@@ -5,5 +5,5 @@ package com.gupao.vip.xiang.spring.framework.core;
  **/
 public interface GPBeanFactory {
     //根据beanName 从容器总中获得一个Bean实例
-    public  Object getBean(String beanName);
+    public  Object getBean(String beanName) throws Exception;
 }

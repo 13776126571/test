@@ -3,6 +3,7 @@ package com.gupao.vip.xiang.spring.framework.webmvc;
 import com.gupao.vip.xiang.spring.framework.annotation.Controller;
 import com.gupao.vip.xiang.spring.framework.annotation.RequestMapping;
 import com.gupao.vip.xiang.spring.framework.annotation.RequestParam;
+import com.gupao.vip.xiang.spring.framework.aop.GPAopProxyUtils;
 import com.gupao.vip.xiang.spring.framework.context.GPApplicationContext;
 
 import javax.servlet.ServletConfig;
@@ -205,15 +206,21 @@ public class DispatcherServlet extends HttpServlet {
         //通常 是一个Map<String,Method>   map.put(url,Method);
         //但是 GPHandlerAdapter有个Pattern属性 已经包含了url信息， 所以直接用list<GPHandlerAdapter>
 
+       try {
 
         String[]beanNames= applicationContext.getBeanDefinitionNames();
         for (String beanName:beanNames){
             //从容器中取到所有的实例
             System.out.println("============================"+beanName+"=============================");
             //获取到的是被包装过的对象，不是原始的对象a
-            Object controller=applicationContext.getBean(beanName);
+            Object proxy=applicationContext.getBean(beanName);
+            //获得原始对象
+            Object controller=GPAopProxyUtils.getTargetObject(proxy);
             Class<?>clazz=controller.getClass();
+
+            //判断的时候用原生对象， 使用的时候用代理对象
             //只要带Controller注解的
+
             if (!clazz.isAnnotationPresent(Controller.class)){continue;}
 
             String baseUrl="";
@@ -236,6 +243,10 @@ public class DispatcherServlet extends HttpServlet {
             }
 
         }
+       }catch (Exception e){
+           e.printStackTrace();
+       }
+
     }
 
 
